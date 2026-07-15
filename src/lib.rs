@@ -1,0 +1,25 @@
+#![allow(non_camel_case_types, non_snake_case, non_upper_case_globals)]
+#![allow(
+    clippy::approx_constant,
+    clippy::missing_safety_doc,
+    clippy::ptr_offset_with_cast,
+    clippy::useless_transmute
+)]
+
+#[cfg(feature = "glam")]
+mod glam;
+
+include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn links_box3d() {
+        unsafe {
+            let version = crate::b3GetVersion();
+            assert_eq!(version.major, 0);
+            assert_eq!(version.minor, 1);
+            assert!(crate::b3GetWorldCount() >= 0);
+        }
+    }
+}
