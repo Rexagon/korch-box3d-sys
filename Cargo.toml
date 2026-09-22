@@ -1,7 +1,10 @@
 [package]
 name = "korch-box3d-sys"
+description = "Box3D bindings for the Korch game engine"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+repository = "https://github.com/Rexagon/korch-box3d-sys.git"
 
 [dependencies]
 glam = { version = "0.33.2", optional = true }
