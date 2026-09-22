@@ -18,7 +18,7 @@ mod tests {
         unsafe {
             let version = crate::b3GetVersion();
             assert_eq!(version.major, 0);
-            assert_eq!(version.minor, 1);
+            assert_eq!(version.minor, 2);
             assert!(crate::b3GetWorldCount() >= 0);
         }
     }
