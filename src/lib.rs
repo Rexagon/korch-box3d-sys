@@ -11,6 +11,11 @@ mod glam;
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
+/// The cookie is stolen. Rust has its own `Default` which copies the underlying logic.
+///
+/// NOTE: Make it sync with `B3_SECRET_COOKIE` (`box3d/src/core.h`).
+pub const B3_SECRET_COOKIE: u32 = 1152023;
+
 #[cfg(test)]
 mod tests {
     #[test]
